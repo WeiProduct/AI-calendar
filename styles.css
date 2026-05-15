@@ -1,0 +1,142 @@
+:root {
+    --ink: #182235;
+    --muted: #637086;
+    --line: #dfe6f0;
+    --blue: #1769ff;
+    --violet: #6656d9;
+    --surface: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 18% 8%, rgba(23, 105, 255, 0.14), transparent 28rem),
+        radial-gradient(circle at 82% 0%, rgba(102, 86, 217, 0.13), transparent 24rem),
+        #f8fbff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.shell {
+    width: min(1120px, calc(100% - 36px));
+    margin: 0 auto;
+    padding: 72px 0;
+}
+
+.hero {
+    max-width: 860px;
+    padding: 64px 0 46px;
+}
+
+.eyebrow {
+    margin: 0 0 14px;
+    color: var(--blue);
+    font-size: 0.78rem;
+    font-weight: 850;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0 0 20px;
+    font-size: clamp(3.8rem, 9vw, 7.4rem);
+    line-height: 0.9;
+    letter-spacing: 0;
+}
+
+.lead {
+    max-width: 740px;
+    margin: 0 0 28px;
+    color: var(--muted);
+    font-size: 1.28rem;
+    line-height: 1.65;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-actions a,
+.card {
+    text-decoration: none;
+}
+
+.hero-actions a {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    padding: 0 18px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: white;
+    font-weight: 800;
+}
+
+.hero-actions a + a {
+    background: white;
+    color: var(--blue);
+    border: 1px solid var(--line);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.card,
+.summary {
+    border: 1px solid var(--line);
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.86);
+    box-shadow: 0 18px 48px rgba(24, 34, 53, 0.08);
+}
+
+.card {
+    min-height: 230px;
+    padding: 28px;
+    color: var(--ink);
+}
+
+.card span {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--blue), var(--violet));
+    color: white;
+    font-weight: 850;
+}
+
+.card h2,
+.summary h2 {
+    margin: 0 0 10px;
+    font-size: 1.35rem;
+}
+
+.card p,
+.summary p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+.summary {
+    margin-top: 18px;
+    padding: 32px;
+}
+
+@media (max-width: 860px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
